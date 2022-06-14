@@ -1,0 +1,22 @@
+version: '3'  # optional since v1.27.0
+services:
+  grafna:
+    image : grafana/grafana
+    ports:
+      - 3000:3000
+  loki:
+    image: grafana/loki
+    ports:
+    - 3100:3100
+    volumes:
+    - /home/pradip/loki:/mnt/config
+    - /var/log:/var/log
+    environment :
+      - config.file=/mnt/condig/loki-local-config.yaml
+  promtail:
+    image : grafana/promtail
+    volumes:
+      - /home/pradip/loki:/mnt/config
+      - /var/log:/var/log
+    environment :
+      - config.file=/mnt/condig/promtail-local-config.yaml
