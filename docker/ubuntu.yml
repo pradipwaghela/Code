@@ -1,0 +1,7 @@
+version: '3'
+services:
+  Ubuntu18.04:
+    image: ubuntu:18.04
+    volumes:
+    - /home/pradip/ubnutu18.04:/home
+    restart: unless-stopped

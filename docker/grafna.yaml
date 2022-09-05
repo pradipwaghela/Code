@@ -20,3 +20,4 @@ services:
       - /var/log:/var/log
     environment :
       - config.file=/mnt/condig/promtail-local-config.yaml
+  
